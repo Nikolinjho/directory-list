@@ -138,9 +138,7 @@
                 return;
 
             foreach ($ffs as $ff) {
-                // echo $dir;
-                $curDir = str_replace('/home/f/frizytt/frizytt.beget.tech/public_html', '', $dir);
-                // echo $curDir;
+                $curDir = str_replace($_SERVER['DOCUMENT_ROOT'], '', $dir);
                 if (is_dir($dir . '/' . $ff)) {
                     echo '<div class="list-item list-item_folder">';
                         echo '<a href="'.$curDir.'/'.$ff.'" class="list-item__link">';
